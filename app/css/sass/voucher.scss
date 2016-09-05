@@ -1,0 +1,32 @@
+
+$red-color:#C9182B;
+$green-color: #44C662;
+
+$error-message-color :$red-color;
+$success-message-color : $green-color;
+$progress-background-color: $green-color; 
+
+.voucher{
+	&-button {
+	   float: right;
+	   margin: 6px;
+	   width: 10em;
+	}
+
+	&-success {
+		color: $success-message-color;
+	}
+
+	&-error {
+		color: $error-message-color;
+	}
+
+	&-progress {
+		background-color: $progress-background-color;
+	}
+
+}
+
+.panel-default .panel-heading {
+	padding-right: 20px;
+}

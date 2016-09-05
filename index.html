@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Voucher Admin Panel</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app/bower_components/bootstrap-table/dist/bootstrap-table.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="app/css/main.css">
+  <script src="app/include/lumino.glyphs.js"></script>
+  <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <!-- dependencies -->
+  <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="app/bower_components/bootstrap-table/dist/bootstrap-table.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+  <!-- angular dependencies-->
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/bower_components/angular-route/angular-route.js"></script>
+  <!-- cloudinary dependencies-->
+    <script src="app/bower_components/cloudinary-core/cloudinary-core.js"></script>
+  <!-- angular file upload dependencies -->
+  <script src="app/bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"  type="text/javascript"></script>
+
+  <!-- cloudinary angular plugin -->
+  <script src="app/bower_components/cloudinary_ng/js/angular.cloudinary.js" type="text/javascript"></script>
+    <!-- angular file upload dependencies -->
+  <script src="app/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+  <!-- ng storage -->
+  <script src="app/bower_components/ngstorage/ngStorage.min.js"></script>
+  <!-- application code -->
+  <script src="app/app.js"></script>
+  <script src="app/src/admin/Login/login.js"></script>
+  <script src="app/src/admin/Dashboard/dashboard.js"></script>
+  <script src="app/src/admin/Add/addAdminForm.js"></script>
+  <script src="app/src/voucher/Add/addVoucherForm.js"></script>
+  <script src="app/src/voucher/Delete/deleteVoucher.js"></script>
+  <script src="app/src/voucher/Edit/editVoucherForm.js"></script>
+  <script src="app/src/brand/Add/addBrandForm.js"></script>
+  <script src="app/src/brand/Edit/editBrandForm.js"></script>
+  <script src="app/components/shared/authService.js"></script>
+  <script src="app/components/shared/tokenInterceptor.js"></script>
+  <script src="app/components/version/version.js"></script>
+  <script src="app/components/version/version-directive.js"></script>
+  <script src="app/components/version/interpolate-filter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    !function ($) {
+      $(document).on("click","ul.nav li.parent > a > span.icon", function(){      
+        $(this).find('em:first').toggleClass("glyphicon-minus");    
+      }); 
+      $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+      if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+      if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+  </script> 
+</body>
+</html>

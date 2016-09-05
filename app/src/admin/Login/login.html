@@ -1,0 +1,38 @@
+<div ng-controller="LoginCtrl">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+			<div class="login-panel panel panel-default">
+				<div class="panel-heading"> Admin Log In</div>
+				<div class="panel-body">
+					<form name="loginForm" role="form" class="loginForm" novalidate>
+						<p ng-bind="error"></p>
+						<fieldset>
+							<div class="form-group">
+								<input
+								ng-model="loginModel.email" 
+								class="form-control" 
+								placeholder="E-mail" 
+								name="email" 
+								type="email" 
+								autofocus=""
+								required>
+							</div>
+							<div class="form-group">
+								<input 
+								ng-model="loginModel.password"
+								class="form-control" 
+								placeholder="Password" 
+								name="password" 
+								type="password" 
+								value=""
+								required>
+							</div>
+	
+							<button type="submit" href="index.html" class="btn btn-primary loginForm-btn" ng-disabled="loginForm.$invalid" ng-click='login(loginModel)'>Login</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div><!-- /.col-->
+	</div><!-- /.row -->
+</div>	<!-- / ng-controller-->

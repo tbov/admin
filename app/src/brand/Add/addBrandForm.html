@@ -1,0 +1,104 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><span>Admin</span>Panel</a>
+			<ul class="user-menu">
+				<li class="dropdown pull-right">
+				 <div ng-controller="authController">
+					<button class="btn btn-default btn-sm" data-toggle="dropdown" ng-click="logout()"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Logout </button>
+					</div>
+					
+				</li>
+			</ul>
+		</div>
+						
+	</div><!-- /.container-fluid -->
+</nav>
+
+<div ng-controller='addBrandFormCtrl'>
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-1 sidebar">
+		<ul class="nav menu">
+			<li><a href="#!/dashboard"> Dashboard</a></li>
+			<li><a href="#!/add_admin"> Add Admin</a></li>
+			<li class="active"><a href="#!/add_brand"> Add Brand</a></li>
+		</ul>
+
+	</div><!--/.sidebar-->
+	
+	<div class="col-sm-9 col-sm-offset-3 col-lg-12 col-lg-offset-1 main">			
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active">Brands</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Brands</h1>
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="panel panel-default">
+						<button type="submit" class="btn btn-primary btn-md brand-button" ng-click="submit(brandModel)">Create</button>
+					<div class="panel-heading">Create a new Brand</div>
+					<div class="panel-body">
+						<div class="col-md-12">
+							<form role="form" name="brandForm">
+							 <p class="brand-success" ng-bind="success"></p>
+							 <p class="brand-error" ng-bind="error"></p>
+							
+								<div class="form-group">
+									<label>Title</label>
+									<input class="form-control" placeholder="e.g. Burger King" ng-model="brandModel.name">
+								</div>
+																
+							<div class="form-group">	
+										
+
+								<!-- https://github.com/danialfarid/ng-file-upload -->
+								   <label>Image</label>
+								   <br>
+								   <img ngf-src="files">
+								   <div 
+								   class="btn btn-default btn-md"
+								   name="file"
+								   type="file"
+								   ng-model="files"
+								   ngf-accept="'image/*'"
+								   ngf-select="uploadFile($files)"
+								   ngf-max-size="20MB" 
+   								   ngf-resize="{width: 100, height: 100}"
+   								   required
+								   >Select</div>	
+
+								   <button class="btn btn-danger" ng-click="files = null" ng-show="files">Remove</button>
+      								<i ng-show="brandForm.file.$error.maxSize">File too large 
+        							  {{errorFile.size / 1000000|number:1}}MB: max 2M</i>	
+						
+
+								    <span class="brand-progress" ng-show="files.progress >= 0">
+       									<div class="status">{{files.status}}</div>
+    								  </span>
+     								<span ng-show="files.result">Upload Successful</span>
+
+								</div>
+								
+								
+						</form>
+					</div>
+				</div>
+			</div><!-- /.col-->
+		</div><!-- /.row -->
+		
+	</div><!--/.main-->
+</div><!-- / ng-controller -->
